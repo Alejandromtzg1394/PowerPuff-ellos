@@ -4,10 +4,19 @@
  */
 package mx.edu.uacm.is.slt.ds.forki.clases;
 
+import java.util.List;
+
 /**
  *
  * @author arral
  */
-public class Gestion {
+public interface Gestion {
+    public Integer crear_operacion();
+    public void editar_operacion(Integer id_operacion);
+    public Integer crear_tarea();
+    public void editar_tarea(Integer id_operacion, Integer id_tarea);
+    public String solicitar_estado_operacion(Integer id_operacion);
+    public void solicita_cambiar_estado_operacion(Integer id_operacion, String estado);
+    
     
 }
