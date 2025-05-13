@@ -10,7 +10,14 @@ package mx.edu.uacm.is.slt.ds.forki.clases;
  */
 public class Tarea {
     
-        //Jair atributos
+    private int id_tarea;
+    private String nombre;
+    private String estado;
+    private Boolean asincrona;
+    private int orden_sucecion;
+    private String instrucciones;
+    private String precondiciones;
+    private String postcondiciones;
     
     
     public <T> void editar(T Tarea){
