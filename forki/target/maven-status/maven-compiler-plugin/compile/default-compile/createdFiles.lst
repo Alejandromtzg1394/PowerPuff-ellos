@@ -1,4 +1,11 @@
-mx\edu\uacm\is\slt\ds\forki\SecondaryController.class
-mx\edu\uacm\is\slt\ds\forki\PrimaryController.class
-mx\edu\uacm\is\slt\ds\forki\App.class
+mx\edu\uacm\is\slt\ds\forki\EditarOperacionesController.class
+mx\edu\uacm\is\slt\ds\forki\ModificarOrdenTareasController.class
 module-info.class
+mx\edu\uacm\is\slt\ds\forki\CrearOperacionController.class
+mx\edu\uacm\is\slt\ds\forki\EditarTareasController.class
+mx\edu\uacm\is\slt\ds\forki\InicioController.class
+mx\edu\uacm\is\slt\ds\forki\CrearTareaController.class
+mx\edu\uacm\is\slt\ds\forki\OperacionRealizarController.class
+mx\edu\uacm\is\slt\ds\forki\clases\Gestion.class
+mx\edu\uacm\is\slt\ds\forki\clases\Operacion.class
+mx\edu\uacm\is\slt\ds\forki\App.class
