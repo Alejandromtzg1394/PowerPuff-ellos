@@ -11,19 +11,22 @@ import java.util.List;
  * @author arral
  */
 public class Operacion implements Gestion {
-    private Integer id_operacion;
-    private Integer id_tarea;
-    public String nombre;
-    private String estado;
-    public List<Integer> tareas;
-    public String precondiciones;
-    public String postcondiciones;
 
-    public Integer getId_operacion() {
+    private int id_operacion;
+    private Integer id_tarea;
+    private String nombre;
+    private String estado;
+    private List<Integer> tareas;
+    private String precondiciones;
+    private String postcondiciones;
+
+    // Getters y Setters públicos necesarios para TableView
+
+    public int getId_operacion() {
         return id_operacion;
     }
 
-    private void setId_operacion(Integer id_operacion) {
+    public void setId_operacion(int id_operacion) {
         this.id_operacion = id_operacion;
     }
 
@@ -31,7 +34,7 @@ public class Operacion implements Gestion {
         return id_tarea;
     }
 
-    private void setId_tarea(Integer id_tarea) {
+    public void setId_tarea(Integer id_tarea) {
         this.id_tarea = id_tarea;
     }
 
@@ -47,7 +50,7 @@ public class Operacion implements Gestion {
         return estado;
     }
 
-    private void setEstado(String estado) {
+    public void setEstado(String estado) {
         this.estado = estado;
     }
 
@@ -74,94 +77,91 @@ public class Operacion implements Gestion {
     public void setPostcondiciones(String postcondiciones) {
         this.postcondiciones = postcondiciones;
     }
-    
 
-    public void editar (){
-        
-    }
-    
-    public void cambiar_estado(Integer id_operacion, String estado){
-        
-    }
-    
-    private void pausa (Integer id_operacion ){
-        
-    }
-    
-    private void reanudar (Integer id_operacion ){
-        
-    }
-    
-    private void ejecuta (Integer id_operacion){
-        
-    }
-    
-    private void suprimir (Integer id_operacion){
-        
-    }
-    
-    private void detener (Integer id_operacion){
-        
-    }
-    
-    public void editar_tarea(Integer id_tarea ){
-        
-    }
-    
-    public void suprimir_tarea(Integer id_tarea){
-        
-    }
-    
-    public String solicitar_estado_tarea(Integer id_tarea){
-        return "a";
-    }
-    
-    public void cambiar_estado_tareas(Integer id_tarea, String estado){
-        
-    }
-    
-    public Integer crear_tarea(){
-        return 0;
-    }
-    
-    public void pausar_tarea(Integer id_tarea){
-        
-    }
-    
-    public void reanudar_tarea(Integer id_tarea){
-        
-    }
-    
-    public void detener_tarea(Integer id_tarea){
-        
-    }
-
+    // Métodos definidos por la interfaz Gestion
     @Override
     public Integer crear_operacion() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void editar_operacion(Integer id_operacion) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void editar_tarea(Integer id_operacion, Integer id_tarea) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public String solicitar_estado_operacion(Integer id_operacion) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void solicita_cambiar_estado_operacion(Integer id_operacion, String estado) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
     }
-    
-    
-    
-    
+
+    // Otros métodos relacionados con tareas y operaciones
+    public void editar() {
+        // Implementación pendiente
+    }
+
+    public void cambiar_estado(Integer id_operacion, String estado) {
+        // Implementación pendiente
+    }
+
+    public void pausa(Integer id_operacion) {
+        // Implementación pendiente
+    }
+
+    public void reanudar(Integer id_operacion) {
+        // Implementación pendiente
+    }
+
+    public void ejecuta(Integer id_operacion) {
+        // Implementación pendiente
+    }
+
+    public void suprimir(Integer id_operacion) {
+        // Implementación pendiente
+    }
+
+    public void detener(Integer id_operacion) {
+        // Implementación pendiente
+    }
+
+    public void editar_tarea(Integer id_tarea) {
+        // Implementación pendiente
+    }
+
+    public void suprimir_tarea(Integer id_tarea) {
+        // Implementación pendiente
+    }
+
+    public String solicitar_estado_tarea(Integer id_tarea) {
+        return "a";
+    }
+
+    public void cambiar_estado_tareas(Integer id_tarea, String estado) {
+        // Implementación pendiente
+    }
+
+    public Integer crear_tarea() {
+        return 0;
+    }
+
+    public void pausar_tarea(Integer id_tarea) {
+        // Implementación pendiente
+    }
+
+    public void reanudar_tarea(Integer id_tarea) {
+        // Implementación pendiente
+    }
+
+    public void detener_tarea(Integer id_tarea) {
+        // Implementación pendiente
+    }
 }
