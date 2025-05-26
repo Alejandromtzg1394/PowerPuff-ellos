@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="458.0" prefWidth="946.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.uacm.is.slt.ds.forki.InicioController">
+   <children>
+      <Pane prefHeight="477.0" prefWidth="946.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <MenuBar fx:id="MenuHome" layoutY="1.0" prefHeight="26.0" prefWidth="946.0">
+               <menus>
+                  <Menu mnemonicParsing="false" text="Acerca de...">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#AcercaDe" text="Acerca de..." />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <TableView fx:id="TabOperaciones" layoutX="14.0" layoutY="159.0" prefHeight="200.0" prefWidth="754.0">
+               <columns>
+                  <TableColumn fx:id="ID" prefWidth="35.0" text="ID" />
+                  <TableColumn fx:id="NombreOp" prefWidth="338.0" text="Nombre de la operacion" />
+                  <TableColumn fx:id="NumTarea" prefWidth="103.0" text="N° Tareas" />
+                  <TableColumn fx:id="Estado" prefWidth="277.0" text="Estado" />
+               </columns>
+            </TableView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="782.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/OIG3.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="Agregar" layoutX="41.0" layoutY="399.0" mnemonicParsing="false" onAction="#Agregar" text="Agregar" />
+            <Button fx:id="Editar" layoutX="231.0" layoutY="399.0" mnemonicParsing="false" onAction="#Editar" text="Editar" />
+            <Button fx:id="Iniciar" layoutX="449.0" layoutY="399.0" mnemonicParsing="false" onAction="#Iniciar" text="Iniciar" />
+            <Button fx:id="Pausa" layoutX="584.0" layoutY="399.0" mnemonicParsing="false" onAction="#Pausa" text="Pausa" />
+            <Button fx:id="Parar" layoutX="724.0" layoutY="399.0" mnemonicParsing="false" onAction="#Parar" text="Parar" />
+            <Text layoutX="254.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de Operaciones">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
