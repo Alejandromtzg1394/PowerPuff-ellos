@@ -3,6 +3,7 @@ mx\edu\uacm\is\slt\ds\forki\ModificarOrdenTareasController.class
 module-info.class
 mx\edu\uacm\is\slt\ds\forki\CrearOperacionController.class
 mx\edu\uacm\is\slt\ds\forki\EditarTareasController.class
+mx\edu\uacm\is\slt\ds\forki\InicioController$1.class
 mx\edu\uacm\is\slt\ds\forki\InicioController.class
 mx\edu\uacm\is\slt\ds\forki\CrearTareaController.class
 mx\edu\uacm\is\slt\ds\forki\OperacionRealizarController.class
