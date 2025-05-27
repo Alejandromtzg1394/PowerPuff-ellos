@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package mx.edu.uacm.is.slt.ds.forki;
 
 import java.net.URL;
@@ -10,21 +6,16 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.MenuBar;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+import mx.edu.uacm.is.slt.ds.forki.clases.Operacion;
 
-/**
- * FXML Controller class
- *
- * @author Alejandro
- */
 public class EditarOperacionesController implements Initializable {
 
-   
     @FXML
     private TableView<?> TabTareas;
     @FXML
@@ -44,58 +35,97 @@ public class EditarOperacionesController implements Initializable {
     @FXML
     private TableColumn<?, ?> NomTareas;
 
-    /**
-     * Initializes the controller class.
-     */
+    private Operacion operacion;
     
-    
-   @Override
-public void initialize(URL url, ResourceBundle rb) {
-    try {
-       
-        Image imgAceptar = new Image(InicioController.class.getResourceAsStream("/mx/edu/uacm/is/slt/ds/forki/img/Aceptar.png"));
-        ImageView vistaAceptar = new ImageView(imgAceptar);
-        vistaAceptar.setFitWidth(50);
-        vistaAceptar.setFitHeight(50);
-        Aceptar.setGraphic(vistaAceptar);
+    private TableView<Operacion> tablaOperaciones;
 
-        Image imgCancelar = new Image(InicioController.class.getResourceAsStream("/mx/edu/uacm/is/slt/ds/forki/img/Cancelar.png"));
-        ImageView vistaCancelar = new ImageView(imgCancelar);
-        vistaCancelar.setFitWidth(50);
-        vistaCancelar.setFitHeight(50);
-        Cancelar.setGraphic(vistaCancelar);
+public void setTablaOperaciones(TableView<Operacion> tablaOperaciones) {
+    this.tablaOperaciones = tablaOperaciones;
+}
 
-        Image imgOrden = new Image(InicioController.class.getResourceAsStream("/mx/edu/uacm/is/slt/ds/forki/img/Orden.png"));
-        ImageView vistaOrden = new ImageView(imgOrden);
-        vistaOrden.setFitWidth(50);
-        vistaOrden.setFitHeight(50);
-        Ordenar.setGraphic(vistaOrden);
 
-        Image imgElimina = new Image(InicioController.class.getResourceAsStream("/mx/edu/uacm/is/slt/ds/forki/img/Elimina.png"));
-        ImageView vistaElimina = new ImageView(imgElimina);
-        vistaElimina.setFitWidth(50);
-        vistaElimina.setFitHeight(50);
-        Eliminar.setGraphic(vistaElimina);
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        try {
+            Image imgAceptar = new Image(InicioController.class.getResourceAsStream("/mx/edu/uacm/is/slt/ds/forki/img/Aceptar.png"));
+            ImageView vistaAceptar = new ImageView(imgAceptar);
+            vistaAceptar.setFitWidth(50);
+            vistaAceptar.setFitHeight(50);
+            Aceptar.setGraphic(vistaAceptar);
 
-    } catch (Exception e) {
-        System.out.println("Error al cargar la imagen: " + e.getMessage());
+            Image imgCancelar = new Image(InicioController.class.getResourceAsStream("/mx/edu/uacm/is/slt/ds/forki/img/Cancelar.png"));
+            ImageView vistaCancelar = new ImageView(imgCancelar);
+            vistaCancelar.setFitWidth(50);
+            vistaCancelar.setFitHeight(50);
+            Cancelar.setGraphic(vistaCancelar);
+
+            Image imgOrden = new Image(InicioController.class.getResourceAsStream("/mx/edu/uacm/is/slt/ds/forki/img/Orden.png"));
+            ImageView vistaOrden = new ImageView(imgOrden);
+            vistaOrden.setFitWidth(50);
+            vistaOrden.setFitHeight(50);
+            Ordenar.setGraphic(vistaOrden);
+
+            Image imgElimina = new Image(InicioController.class.getResourceAsStream("/mx/edu/uacm/is/slt/ds/forki/img/Elimina.png"));
+            ImageView vistaElimina = new ImageView(imgElimina);
+            vistaElimina.setFitWidth(50);
+            vistaElimina.setFitHeight(50);
+            Eliminar.setGraphic(vistaElimina);
+
+        } catch (Exception e) {
+            System.out.println("Error al cargar la imagen: " + e.getMessage());
+        }
+    }    
+
+  
+    public void setOperacion(Operacion operacion) {
+        this.operacion = operacion;
+        cargarDatosOperacion();
     }
-}    
+
+  
+    private void cargarDatosOperacion() {
+    if (operacion != null) {
+        NombreOperacion.setText(operacion.getNombre());
+        Precondicion.setText(operacion.getPrecondiciones());      
+        Postcondicion.setText(operacion.getPostcondiciones());    
+    }
+}
+
+    @FXML
+private void Aceptar(ActionEvent event) {
+    if (operacion != null) {
+        operacion.setNombre(NombreOperacion.getText());
+        operacion.setPrecondiciones(Precondicion.getText());      
+        operacion.setPostcondiciones(Postcondicion.getText());
+
+        // Refrescar la tabla original
+        if (tablaOperaciones != null) {
+            tablaOperaciones.refresh();
+        }
+
+        cerrarVentana();
+    }
+}
+ 
+    @FXML
+    private void Cancelar(ActionEvent event) {
+        
+        cerrarVentana();
+    }
 
     @FXML
     private void Ordenar(ActionEvent event) {
+        
     }
 
     @FXML
     private void Eliminar(ActionEvent event) {
+        
     }
 
-    @FXML
-    private void Aceptar(ActionEvent event) {
+    private void cerrarVentana() {
+        Stage stage = (Stage) Cancelar.getScene().getWindow();
+        stage.close();
     }
 
-    @FXML
-    private void Cancelar(ActionEvent event) {
-    }
-    
 }
