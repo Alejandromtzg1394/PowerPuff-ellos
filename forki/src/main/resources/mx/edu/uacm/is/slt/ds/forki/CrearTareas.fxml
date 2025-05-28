@@ -19,7 +19,7 @@
                </font>
             </Text>
             <TextField fx:id="NombreOperacion" layoutX="122.0" layoutY="177.0" />
-            <Text layoutX="145.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Operacion" />
+            <Text layoutX="155.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Tareas" />
             <TextField fx:id="Precondicion" layoutX="121.0" layoutY="258.0" />
             <Text layoutX="153.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precondiciones" />
             <TextField fx:id="Postcondicion" layoutX="122.0" layoutY="335.0" />
