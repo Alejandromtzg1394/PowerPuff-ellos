@@ -102,7 +102,7 @@ private void Aceptar() {
         // Crear la nueva ventana (Stage)
         Stage nuevaVentana = new Stage();
         nuevaVentana.setScene(new Scene(root));
-        nuevaVentana.setTitle("Crear Nueva Tarea"); // Cambiar el título según corresponda
+        nuevaVentana.setTitle("Crear Nueva Tarea");
 
         // Configurar como ventana modal
         Stage ventanaActual = (Stage) AgregarTarea.getScene().getWindow();
