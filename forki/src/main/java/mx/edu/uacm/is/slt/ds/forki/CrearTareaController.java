@@ -6,30 +6,32 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class CrearTareaController implements Initializable  {
 
     @FXML
-    private TextField NombreOperacion;
+    private TextField NombreTarea;
     @FXML
     private TextField Precondicion;
     @FXML
     private TextField Postcondicion;
     @FXML
+    private ComboBox<String> Estado;
+    @FXML
+    private TextArea Instrucciones;
+    @FXML
     private Button Aceptar;
     @FXML
     private Button Cancelar;
-    @FXML
-    private MenuBar MenuHome;
+
+    private InicioController inicioController;
     
     
     @Override
-public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb) {
     try {
        
         Image imgAceptar = new Image(InicioController.class.getResourceAsStream("/mx/edu/uacm/is/slt/ds/forki/img/Aceptar.png"));
@@ -49,6 +51,10 @@ public void initialize(URL url, ResourceBundle rb) {
         System.out.println("Error al cargar la imagen: " + e.getMessage());
     }
 }
+
+    public void setInicioController(InicioController inicioController) {
+        this.inicioController = inicioController;
+    }
 
     @FXML
     private void Aceptar(ActionEvent event) {

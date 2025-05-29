@@ -2,23 +2,19 @@ package mx.edu.uacm.is.slt.ds.forki;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import mx.edu.uacm.is.slt.ds.forki.clases.Operacion;
-import mx.edu.uacm.is.slt.ds.forki.clases.Tarea;
 
 public class CrearOperacionController implements Initializable  {
 
@@ -28,10 +24,6 @@ public class CrearOperacionController implements Initializable  {
     private TextField Precondicion;
     @FXML
     private TextField Postcondicion;
-    @FXML
-    private TextField Instruccion;
-    @FXML
-    private ComboBox<String> Estado;
     @FXML
     private Button Aceptar;
     @FXML
@@ -99,9 +91,26 @@ private void Aceptar() {
 
     @FXML
     private void AgregarTarea() throws IOException {
-
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("CrearTarea.fxml"));
+        // Cargar el FXML de la nueva ventana
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("CrearTareas.fxml"));
         Parent root = loader.load();
+
+        // Configurar el controlador de la nueva ventana
+        CrearTareaController controller = loader.getController();
+        controller.setInicioController(this.inicioController);
+
+        // Crear la nueva ventana (Stage)
+        Stage nuevaVentana = new Stage();
+        nuevaVentana.setScene(new Scene(root));
+        nuevaVentana.setTitle("Crear Nueva Tarea"); // Cambiar el título según corresponda
+
+        // Configurar como ventana modal
+        Stage ventanaActual = (Stage) AgregarTarea.getScene().getWindow();
+        nuevaVentana.initOwner(ventanaActual);
+        nuevaVentana.initModality(Modality.WINDOW_MODAL);
+
+        // Mostrar la ventana y esperar hasta que se cierre
+        nuevaVentana.showAndWait();
     }
 
     private void cerrarVentana() {
