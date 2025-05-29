@@ -7,6 +7,7 @@ package mx.edu.uacm.is.slt.ds.forki.clases;
 /**
  *
  * @author michelle
+ * @author jair
  */
 public class Tarea {
     private int id_tarea;
@@ -17,6 +18,7 @@ public class Tarea {
     private String instrucciones;
     private String precondiciones;
     private String postcondiciones;
+    
 //constructor
     public Tarea(int id_tarea, String estado, String nombre, boolean asincrona, int orden_sucesion, String instrucciones, String precondiciones, String postcondiciones) {
         this.id_tarea = id_tarea;
@@ -95,4 +97,38 @@ public class Tarea {
     }
     
     
+    //metodos
+    
+    public <T> void editar(T Tarea){
+        //hola
+    }
+
+    public String obtener_estado(int id){
+        return "regreso string";
+    }
+
+    public void cambiar_estado(int id, String estado){
+        //nada
+    }
+
+    public void suprimir(int id){
+        //nada
+    }
+
+    public void detener(int id){
+        //nada
+    }
+
+    public void ejecutar(int id){
+        //me ejecuto
+    }
+
+    public void reanuda(int id){
+        //me reanudo
+    }
+
+    public void pausa(int id){
+        //entro en pausa
+    }
+
 }

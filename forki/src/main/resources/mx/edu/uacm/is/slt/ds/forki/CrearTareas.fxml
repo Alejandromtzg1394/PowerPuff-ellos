@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -13,19 +15,26 @@
       <Pane layoutY="-26.0" prefHeight="487.0" prefWidth="580.0" style="-fx-background-color: #FFFFFF;">
          <children>
             <MenuBar fx:id="MenuHome" layoutY="26.0" prefHeight="26.0" prefWidth="580.0" />
-            <Text layoutX="66.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Crear Operacion">
+            <Text layoutX="35.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Crear Tarea">
                <font>
                   <Font size="36.0" />
                </font>
             </Text>
-            <TextField fx:id="NombreOperacion" layoutX="122.0" layoutY="177.0" />
-            <Text layoutX="155.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Tareas" />
-            <TextField fx:id="Precondicion" layoutX="121.0" layoutY="258.0" />
-            <Text layoutX="153.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precondiciones" />
-            <TextField fx:id="Postcondicion" layoutX="122.0" layoutY="335.0" />
-            <Text layoutX="145.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postcondiciones" />
-            <Button fx:id="Aceptar" layoutX="395.0" layoutY="190.0" mnemonicParsing="false" onAction="#Aceptar" text="Aceptar" />
-            <Button fx:id="Cancelar" layoutX="395.0" layoutY="258.0" mnemonicParsing="false" onAction="#Cancelar" text="Cancelar" />
+
+
+            <TextField fx:id="NombreOperacion" layoutX="39.0" layoutY="173.0" />
+            <Text layoutX="62.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Tarea" />
+            <TextField fx:id="Precondicion" layoutX="38.0" layoutY="254.0" />
+            <Text layoutX="70.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precondiciones" />
+            <TextField fx:id="Postcondicion" layoutX="39.0" layoutY="331.0" />
+            <Text layoutX="62.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postcondiciones" />
+            <Button fx:id="Aceptar" layoutX="499.0" layoutY="452.0" mnemonicParsing="false" onAction="#Aceptar" text="Aceptar" />
+            <Button fx:id="Cancelar" layoutX="416.0" layoutY="452.0" mnemonicParsing="false" onAction="#Cancelar" text="Cancelar" />
+            <ComboBox fx:id="Estado" layoutX="39.0" layoutY="410.0" prefHeight="26.0" prefWidth="166.0" />
+            <Text layoutX="62.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado" />
+            <TextArea fx:id="Intrucciones" layoutX="281.0" layoutY="172.0" prefHeight="237.0" prefWidth="278.0" />
+            <Text layoutX="281.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Instrucciones" />
+
          </children>
       </Pane>
    </children>
