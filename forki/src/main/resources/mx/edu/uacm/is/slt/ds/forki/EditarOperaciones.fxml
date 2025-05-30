@@ -25,16 +25,17 @@
                   <Font size="36.0" />
                </font>
             </Text>
-            <Button fx:id="Aceptar" layoutX="287.0" layoutY="356.0" mnemonicParsing="false" onAction="#Aceptar" text="Aceptar" />
-            <Button fx:id="Cancelar" layoutX="453.0" layoutY="356.0" mnemonicParsing="false" onAction="#Cancelar" text="Cancelar" />
-            <Button fx:id="Ordenar" layoutX="112.0" layoutY="356.0" mnemonicParsing="false" onAction="#Ordenar" text="Ordenar" />
-            <Button fx:id="Eliminar" layoutX="630.0" layoutY="356.0" mnemonicParsing="false" onAction="#Eliminar" text="Eliminar" />
+            <Button fx:id="Aceptar" layoutX="257.0" layoutY="366.0" mnemonicParsing="false" onAction="#Aceptar" text="Aceptar" />
+            <Button fx:id="Cancelar" layoutX="423.0" layoutY="366.0" mnemonicParsing="false" onAction="#Cancelar" text="Cancelar" />
+            <Button fx:id="Ordenar" layoutX="82.0" layoutY="366.0" mnemonicParsing="false" onAction="#Ordenar" text="Ordenar" />
+            <Button fx:id="Eliminar" layoutX="600.0" layoutY="366.0" mnemonicParsing="false" onAction="#Eliminar" text="Eliminar" />
             <TextField fx:id="NombreOperacion" layoutX="138.0" layoutY="151.0" />
             <Text layoutX="161.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Operacion" />
             <TextField fx:id="Precondicion" layoutX="138.0" layoutY="213.0" />
             <Text layoutX="172.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precondiciones" />
             <TextField fx:id="Postcondicion" layoutX="138.0" layoutY="277.0" />
             <Text layoutX="169.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postcondiciones" />
+            <Button fx:id="EditarTarea" layoutX="772.0" layoutY="366.0" mnemonicParsing="false" onAction="#EditarTarea" text="Tarea" />
          </children>
       </Pane>
    </children>
