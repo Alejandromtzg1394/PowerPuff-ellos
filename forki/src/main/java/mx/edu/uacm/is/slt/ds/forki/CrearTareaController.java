@@ -81,7 +81,6 @@ public class CrearTareaController implements Initializable  {
     nuevaTarea.setPostcondiciones(Postcondicion.getText());
     nuevaTarea.setId_tarea((int)(Math.random() * 1000));
 
-
     cerrarVentana();
 }
 
