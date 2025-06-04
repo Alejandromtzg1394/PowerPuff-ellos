@@ -56,7 +56,7 @@ public void initialize(URL url, ResourceBundle rb) {
     try {
         
         ObservableList<String> estados = FXCollections.observableArrayList(
-                "detenida","ejecucion","pausa"
+                "Detenida","Ejecución","Pausa"
         );
         comboEstado.setItems(estados);
        
