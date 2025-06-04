@@ -30,14 +30,18 @@ public class CrearTareaController implements Initializable  {
     private Button Aceptar;
     @FXML
     private Button Cancelar;
-   
+
+    private Tarea tareaCreada;
 
     private InicioController inicioController;
     
     public void setInicioController(InicioController inicioController) {
         this.inicioController = inicioController;
     }
-    
+
+    public Tarea getTareaCreada() {
+        return tareaCreada;
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -76,12 +80,7 @@ public class CrearTareaController implements Initializable  {
     nuevaTarea.setPrecondiciones(Precondicion.getText());
     nuevaTarea.setPostcondiciones(Postcondicion.getText());
     nuevaTarea.setId_tarea((int)(Math.random() * 1000));
-    
-    if (inicioController != null) {
-        javafx.application.Platform.runLater(() -> {
-            inicioController.agregarTarea(nuevaTarea);
-        });
-    }
+
 
     cerrarVentana();
 }
