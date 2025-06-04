@@ -33,7 +33,9 @@ public class Tarea {
         this.precondiciones = precondiciones;
         this.postcondiciones = postcondiciones;
     }
-  //geters y seters
+
+    
+    //geters y seters
 
     public int getId_tarea() {
         return id_tarea;

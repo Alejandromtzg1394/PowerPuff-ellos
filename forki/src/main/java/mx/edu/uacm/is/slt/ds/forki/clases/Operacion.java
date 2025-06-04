@@ -16,7 +16,7 @@ public class Operacion implements Gestion {
     private Integer id_tarea;
     private String nombre;
     private String estado;
-    private List<Integer> tareas;
+    private List<Tarea> tareas;
     private String precondiciones;
     private String postcondiciones;
 
@@ -54,11 +54,11 @@ public class Operacion implements Gestion {
         this.estado = estado;
     }
 
-    public List<Integer> getTareas() {
+    public List<Tarea> getTareas() {
         return tareas;
     }
 
-    public void setTareas(List<Integer> tareas) {
+    public void setTareas(List<Tarea> tareas) {
         this.tareas = tareas;
     }
 
