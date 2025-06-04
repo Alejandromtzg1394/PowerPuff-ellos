@@ -105,6 +105,8 @@ private void Aceptar() {
     }
 
     private void cerrarVentana() {
+        
+        
         Stage stage = (Stage) NombreOperacion.getScene().getWindow();
         stage.close();
     }
