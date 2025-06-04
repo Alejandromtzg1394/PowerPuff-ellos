@@ -20,6 +20,9 @@ public class Tarea {
     private String postcondiciones;
     
 //constructor
+    public Tarea(){
+        
+    }
     public Tarea(int id_tarea, String estado, String nombre, boolean asincrona, int orden_sucesion, String instrucciones, String precondiciones, String postcondiciones) {
         this.id_tarea = id_tarea;
         this.estado = estado;
