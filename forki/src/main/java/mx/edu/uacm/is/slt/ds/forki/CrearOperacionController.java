@@ -16,6 +16,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import mx.edu.uacm.is.slt.ds.forki.clases.Operacion;
 
+
 public class CrearOperacionController implements Initializable  {
 
     @FXML
@@ -81,6 +82,9 @@ private void Aceptar() {
     }
 
     cerrarVentana();
+    
+  
+    
 }
 
 
@@ -116,6 +120,10 @@ private void Aceptar() {
     private void cerrarVentana() {
         Stage stage = (Stage) NombreOperacion.getScene().getWindow();
         stage.close();
+    }
+
+    private void Acepta() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
 
