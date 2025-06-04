@@ -20,6 +20,8 @@
                   <Font size="36.0" />
                </font>
             </Text>
+
+
             <TextField fx:id="NombreOperacion" layoutX="39.0" layoutY="173.0" />
             <Text layoutX="62.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Tarea" />
             <TextField fx:id="Precondicion" layoutX="38.0" layoutY="254.0" />
@@ -32,6 +34,7 @@
             <Text layoutX="62.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado" />
             <TextArea fx:id="Intrucciones" layoutX="281.0" layoutY="172.0" prefHeight="237.0" prefWidth="278.0" />
             <Text layoutX="281.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Instrucciones" />
+
          </children>
       </Pane>
    </children>

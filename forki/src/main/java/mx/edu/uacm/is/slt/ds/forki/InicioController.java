@@ -25,6 +25,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import mx.edu.uacm.is.slt.ds.forki.clases.Operacion;
+import mx.edu.uacm.is.slt.ds.forki.clases.Tarea;
 
 public class InicioController implements Initializable {
 
@@ -236,5 +237,9 @@ public class InicioController implements Initializable {
                 + "Jurado Laurrabaquio Fatima Daniela\n"
                 + "Martinez Garcia Nestor Alejandro\n");
         alert.showAndWait();
+    }
+
+    void agregarTarea(Tarea nuevaTarea) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
