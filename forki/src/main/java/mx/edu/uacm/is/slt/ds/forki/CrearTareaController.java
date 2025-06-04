@@ -9,6 +9,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+import mx.edu.uacm.is.slt.ds.forki.clases.Tarea;
 
 public class CrearTareaController implements Initializable  {
 
@@ -26,8 +28,13 @@ public class CrearTareaController implements Initializable  {
     private Button Aceptar;
     @FXML
     private Button Cancelar;
+   
 
     private InicioController inicioController;
+    
+    public void setInicioController(InicioController inicioController) {
+        this.inicioController = inicioController;
+    }
     
     
     @Override
@@ -52,15 +59,34 @@ public class CrearTareaController implements Initializable  {
     }
 }
 
-    public void setInicioController(InicioController inicioController) {
-        this.inicioController = inicioController;
-    }
+   
 
     @FXML
     private void Aceptar(ActionEvent event) {
+    Tarea nuevaTarea = new Tarea();
+    nuevaTarea.setEstado("Detenido");
+    nuevaTarea.setNombre(NombreTarea.getText());
+    nuevaTarea.setInstrucciones(Instrucciones.getText());
+    nuevaTarea.setPrecondiciones(Precondicion.getText());
+    nuevaTarea.setPostcondiciones(Postcondicion.getText());
+    nuevaTarea.setId_tarea((int)(Math.random() * 1000));
+    
+    if (inicioController != null) {
+        javafx.application.Platform.runLater(() -> {
+            inicioController.agregarTarea(nuevaTarea);
+        });
     }
+
+    cerrarVentana();
+}
 
     @FXML
     private void Cancelar(ActionEvent event) {
+         cerrarVentana();
+    }
+    
+    private void cerrarVentana() {
+        Stage stage = (Stage) NombreTarea.getScene().getWindow();
+        stage.close();
     }
 }

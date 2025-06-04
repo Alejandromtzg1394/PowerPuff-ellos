@@ -6,10 +6,10 @@ package mx.edu.uacm.is.slt.ds.forki.clases;
 
 /**
  *
+ * @author michelle
  * @author jair
  */
 public class Tarea {
-    
     private int id_tarea;
     private String estado;
     private String nombre;
@@ -18,7 +18,6 @@ public class Tarea {
     private String instrucciones;
     private String precondiciones;
     private String postcondiciones;
-    
     
 //constructor
     public Tarea(int id_tarea, String estado, String nombre, boolean asincrona, int orden_sucesion, String instrucciones, String precondiciones, String postcondiciones) {
@@ -131,4 +130,5 @@ public class Tarea {
     public void pausa(int id){
         //entro en pausa
     }
+
 }
