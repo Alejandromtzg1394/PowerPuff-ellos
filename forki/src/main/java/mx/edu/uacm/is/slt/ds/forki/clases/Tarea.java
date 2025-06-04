@@ -20,7 +20,6 @@ public class Tarea {
     private String postcondiciones;
     
     //constructor vacio
-
     public Tarea() {
     }
     

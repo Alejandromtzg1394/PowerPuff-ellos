@@ -55,6 +55,7 @@ public class InicioController implements Initializable {
     private TableColumn<Operacion, String> Estado;
 
     private ObservableList<Operacion> listaIoperacion = FXCollections.observableArrayList();
+    private ObservableList<Tarea> listaTarea = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -239,7 +240,9 @@ public class InicioController implements Initializable {
         alert.showAndWait();
     }
 
-    void agregarTarea(Tarea nuevaTarea) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    void agregarTarea(Tarea tarea) {
+        listaTarea.add(tarea);
+        System.out.println("---> Se agregó: " + tarea.getNombre());
+        System.out.println("---> Total en lista: " + listaTarea.size());
     }
 }
