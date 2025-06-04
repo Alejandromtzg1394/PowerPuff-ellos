@@ -3,6 +3,8 @@ package mx.edu.uacm.is.slt.ds.forki;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -48,6 +50,7 @@ public class EditarOperacionesController implements Initializable {
     private Operacion operacion;
     
     private TableView<Operacion> tablaOperaciones;
+    
 
 public void setTablaOperaciones(TableView<Operacion> tablaOperaciones) {
     this.tablaOperaciones = tablaOperaciones;
@@ -57,6 +60,8 @@ public void setTablaOperaciones(TableView<Operacion> tablaOperaciones) {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
+            
+        
             Image imgAceptar = new Image(InicioController.class.getResourceAsStream("/mx/edu/uacm/is/slt/ds/forki/img/Aceptar.png"));
             ImageView vistaAceptar = new ImageView(imgAceptar);
             vistaAceptar.setFitWidth(50);
@@ -103,7 +108,9 @@ public void setTablaOperaciones(TableView<Operacion> tablaOperaciones) {
     if (operacion != null) {
         NombreOperacion.setText(operacion.getNombre());
         Precondicion.setText(operacion.getPrecondiciones());      
-        Postcondicion.setText(operacion.getPostcondiciones());    
+        Postcondicion.setText(operacion.getPostcondiciones());
+        
+        TabTareas.setItems(operacion.getTareas());
     }
 }
 
