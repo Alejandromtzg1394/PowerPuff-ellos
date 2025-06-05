@@ -23,7 +23,7 @@
             <Button fx:id="Aceptar" layoutX="371.0" layoutY="349.0" mnemonicParsing="false" onAction="#Aceptar" text="Aceptar" />
             <Button fx:id="Cancelar" layoutX="537.0" layoutY="349.0" mnemonicParsing="false" onAction="#Cancelar" text="Cancelar" />
             <Button fx:id="Eliminar" layoutX="714.0" layoutY="349.0" mnemonicParsing="false" onAction="#Eliminar" text="Eliminar" />
-            <TextField fx:id="NombreOperacion" layoutX="55.0" layoutY="121.0" />
+            <TextField fx:id="NombreTarea" layoutX="55.0" layoutY="121.0" />
             <Text layoutX="71.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de la tarea" wrappingWidth="151.19823989868166" />
             <TextField fx:id="Precondicion" layoutX="55.0" layoutY="176.0" />
             <Text layoutX="71.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precondiciones" />

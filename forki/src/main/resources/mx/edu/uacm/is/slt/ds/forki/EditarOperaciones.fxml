@@ -17,7 +17,8 @@
             <MenuBar fx:id="MenuHome" layoutX="-1.0" layoutY="1.0" prefHeight="26.0" prefWidth="906.0" />
             <TableView fx:id="TabTareas" layoutX="373.0" layoutY="48.0" prefHeight="281.0" prefWidth="518.0">
                <columns>
-                  <TableColumn fx:id="NomTareas" prefWidth="510.0" text="Tareas" />
+                  <TableColumn fx:id="NomTareas" prefWidth="254.39999389648438" text="Tareas" />
+                  <TableColumn fx:id="Estado" prefWidth="332.00006103515625" text="Estado" />
                </columns>
             </TableView>
             <Text layoutX="80.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Editar Operacion">
