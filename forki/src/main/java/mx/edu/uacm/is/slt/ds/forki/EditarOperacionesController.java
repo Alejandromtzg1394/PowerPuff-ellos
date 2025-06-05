@@ -3,8 +3,6 @@ package mx.edu.uacm.is.slt.ds.forki;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -39,6 +37,8 @@ public class EditarOperacionesController implements Initializable {
     private Button Eliminar;
     @FXML
     private Button EditarTarea;
+    @FXML
+    private Button AgregarTarea;
     @FXML
     private TextField NombreOperacion;
     @FXML
@@ -94,6 +94,12 @@ public void setTablaOperaciones(TableView<Operacion> tablaOperaciones) {
             vistaEdita.setFitWidth(50);
             vistaEdita.setFitHeight(50);
             EditarTarea.setGraphic(vistaEdita);
+
+            Image imgAgrega = new Image(InicioController.class.getResourceAsStream("/mx/edu/uacm/is/slt/ds/forki/img/Mas.png"));
+            ImageView vistaAgrega = new ImageView(imgAgrega);
+            vistaAgrega.setFitWidth(50);
+            vistaAgrega.setFitHeight(50);
+            AgregarTarea.setGraphic(vistaAgrega);
             
             NomTareas.setCellValueFactory(new PropertyValueFactory<>("nombre"));
             Estado.setCellValueFactory(new PropertyValueFactory<>("estado"));
@@ -184,6 +190,31 @@ private void Aceptar(ActionEvent event) {
     private void cerrarVentana() {
         Stage stage = (Stage) Cancelar.getScene().getWindow();
         stage.close();
+    }
+
+    @FXML
+    private void AgregarTarea() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("CrearTareas.fxml"));
+        Parent root = loader.load();
+
+        CrearTareaController controller = loader.getController();
+
+        Stage nuevaVentana = new Stage();
+        nuevaVentana.setScene(new Scene(root));
+        nuevaVentana.setTitle("Crear Nueva Tarea");
+
+        Stage ventanaActual = (Stage) Aceptar.getScene().getWindow();
+        nuevaVentana.initOwner(ventanaActual);
+        nuevaVentana.initModality(Modality.WINDOW_MODAL);
+
+        // Mostrar la ventana y esperar hasta que se cierre
+        nuevaVentana.showAndWait();
+
+        Tarea tarea = controller.getTareaCreada();
+
+        if (tarea != null) {
+            this.operacion.getTareas().add(tarea);
+        }
     }
 
 }

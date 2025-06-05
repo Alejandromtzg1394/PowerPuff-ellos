@@ -28,8 +28,8 @@
             <Text layoutX="70.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precondiciones" />
             <TextField fx:id="Postcondicion" layoutX="39.0" layoutY="331.0" />
             <Text layoutX="62.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postcondiciones" />
-            <Button fx:id="Aceptar" layoutX="499.0" layoutY="452.0" mnemonicParsing="false" onAction="#Aceptar" text="Aceptar" />
-            <Button fx:id="Cancelar" layoutX="416.0" layoutY="452.0" mnemonicParsing="false" onAction="#Cancelar" text="Cancelar" />
+            <Button fx:id="Aceptar" layoutX="420.0" layoutY="423.0" mnemonicParsing="false" onAction="#Aceptar" text="Aceptar" />
+            <Button fx:id="Cancelar" layoutX="281.0" layoutY="423.0" mnemonicParsing="false" onAction="#Cancelar" text="Cancelar" />
             <ComboBox fx:id="Estado" layoutX="39.0" layoutY="410.0" prefHeight="26.0" prefWidth="166.0" />
             <Text layoutX="62.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estado" />
             <TextArea fx:id="Instrucciones" layoutX="281.0" layoutY="172.0" prefHeight="237.0" prefWidth="278.0" />
