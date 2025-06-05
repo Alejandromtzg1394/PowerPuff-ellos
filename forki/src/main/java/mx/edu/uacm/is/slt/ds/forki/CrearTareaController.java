@@ -80,7 +80,7 @@ public class CrearTareaController implements Initializable  {
     nuevaTarea.setPrecondiciones(Precondicion.getText());
     nuevaTarea.setPostcondiciones(Postcondicion.getText());
     nuevaTarea.setId_tarea((int)(Math.random() * 1000));
-
+    tareaCreada=nuevaTarea;
 
     cerrarVentana();
 }

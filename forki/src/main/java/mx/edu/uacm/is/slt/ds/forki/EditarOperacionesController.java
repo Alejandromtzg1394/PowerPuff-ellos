@@ -17,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
@@ -45,7 +46,9 @@ public class EditarOperacionesController implements Initializable {
     @FXML
     private TextField Postcondicion;
     @FXML
-    private TableColumn<?, ?> NomTareas;
+    private TableColumn<Tarea, String> NomTareas;
+    @FXML
+    private TableColumn<Tarea, String> Estado;
 
     private Operacion operacion;
     
@@ -91,10 +94,14 @@ public void setTablaOperaciones(TableView<Operacion> tablaOperaciones) {
             vistaEdita.setFitWidth(50);
             vistaEdita.setFitHeight(50);
             EditarTarea.setGraphic(vistaEdita);
+            
+            NomTareas.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+            Estado.setCellValueFactory(new PropertyValueFactory<>("estado"));
 
         } catch (Exception e) {
             System.out.println("Error al cargar la imagen: " + e.getMessage());
         }
+        
     }    
 
   
