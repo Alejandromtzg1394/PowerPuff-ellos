@@ -3,6 +3,10 @@ package mx.edu.uacm.is.slt.ds.forki;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -15,6 +19,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import mx.edu.uacm.is.slt.ds.forki.clases.Operacion;
+import mx.edu.uacm.is.slt.ds.forki.clases.Tarea;
 
 public class CrearOperacionController implements Initializable  {
 
@@ -28,19 +33,17 @@ public class CrearOperacionController implements Initializable  {
     private Button Aceptar;
     @FXML
     private Button Cancelar;
-    @FXML
-    private Button AgregarTarea;
-    
+
     private InicioController inicioController;
-    
+
     public void setInicioController(InicioController controller) {
         this.inicioController = controller;
     }
-    
+
     @Override
 public void initialize(URL url, ResourceBundle rb) {
     try {
-       
+
         Image imgAceptar = new Image(InicioController.class.getResourceAsStream("/mx/edu/uacm/is/slt/ds/forki/img/Aceptar.png"));
         ImageView vistaAceptar = new ImageView(imgAceptar);
         vistaAceptar.setFitWidth(50);
@@ -52,12 +55,6 @@ public void initialize(URL url, ResourceBundle rb) {
         vistaCancelar.setFitWidth(50);
         vistaCancelar.setFitHeight(50);
         Cancelar.setGraphic(vistaCancelar);
-
-        Image imgAgregarTarea = new Image(InicioController.class.getResourceAsStream("/mx/edu/uacm/is/slt/ds/forki/img/Mas.png"));
-        ImageView vistaAgregarTarea = new ImageView(imgAgregarTarea);
-        vistaAgregarTarea.setFitWidth(50);
-        vistaAgregarTarea.setFitHeight(50);
-        AgregarTarea.setGraphic(vistaAgregarTarea);
 
 
     } catch (Exception e) {
@@ -74,6 +71,23 @@ private void Aceptar() {
     nuevaOperacion.setId_operacion((int) (Math.random() * 1000));
     nuevaOperacion.setEstado("Detenido");
 
+       try {
+           // El bucle for ahora llamará a AgregarTarea() y añadirá la tarea devuelta.
+           ObservableList<Tarea> tareas = FXCollections.observableArrayList();
+           for (int i = 0; i < 2; i++) {
+               Tarea tareaCreada = mostrarVentanaCrearTarea(); // Llama al nuevo método
+               if (tareaCreada != null) {
+                   tareas.add(tareaCreada); // Agrega la tarea a la lista de tareas de la operación
+                   System.out.printf("Se creo la tarea: %s\n", tareaCreada);
+               }
+           }
+           nuevaOperacion.setTareas(tareas);
+           System.out.printf("Tarea Creada: %s\n", nuevaOperacion.getTareas());
+       } catch (IOException e) {
+           throw new RuntimeException("Error al crear tareas: " + e.getMessage(), e);
+       }
+
+
     if (inicioController != null) {
         javafx.application.Platform.runLater(() -> {
             inicioController.agregarOperacion(nuevaOperacion);
@@ -81,7 +95,7 @@ private void Aceptar() {
     }
 
     cerrarVentana();
-}
+   }
 
 
     @FXML
@@ -89,28 +103,29 @@ private void Aceptar() {
         cerrarVentana();
     }
 
-    @FXML
-    private void AgregarTarea() throws IOException {
-        // Cargar el FXML de la nueva ventana
+    // Método modificado para devolver una Tarea
+    @FXML // Mantén esta anotación si deseas que el botón "AgregarTarea" también pueda invocarlo directamente
+    private Tarea mostrarVentanaCrearTarea() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CrearTareas.fxml"));
         Parent root = loader.load();
 
-        // Configurar el controlador de la nueva ventana
         CrearTareaController controller = loader.getController();
+        // Puedes pasar el inicioController si CrearTareaController lo necesita para algo más
         controller.setInicioController(this.inicioController);
 
-        // Crear la nueva ventana (Stage)
         Stage nuevaVentana = new Stage();
         nuevaVentana.setScene(new Scene(root));
         nuevaVentana.setTitle("Crear Nueva Tarea");
 
-        // Configurar como ventana modal
-        Stage ventanaActual = (Stage) AgregarTarea.getScene().getWindow();
+        Stage ventanaActual = (Stage) Aceptar.getScene().getWindow();
         nuevaVentana.initOwner(ventanaActual);
         nuevaVentana.initModality(Modality.WINDOW_MODAL);
 
         // Mostrar la ventana y esperar hasta que se cierre
         nuevaVentana.showAndWait();
+
+        // Después de que la ventana se cierra, recuperamos la tarea creada
+        return controller.getTareaCreada();
     }
 
     private void cerrarVentana() {

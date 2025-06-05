@@ -3,6 +3,8 @@ package mx.edu.uacm.is.slt.ds.forki;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
@@ -43,11 +46,14 @@ public class EditarOperacionesController implements Initializable {
     @FXML
     private TextField Postcondicion;
     @FXML
-    private TableColumn<?, ?> NomTareas;
+    private TableColumn<Tarea, String> NomTareas;
+    @FXML
+    private TableColumn<Tarea, String> Estado;
 
     private Operacion operacion;
     
     private TableView<Operacion> tablaOperaciones;
+    
 
 public void setTablaOperaciones(TableView<Operacion> tablaOperaciones) {
     this.tablaOperaciones = tablaOperaciones;
@@ -57,6 +63,8 @@ public void setTablaOperaciones(TableView<Operacion> tablaOperaciones) {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
+            
+        
             Image imgAceptar = new Image(InicioController.class.getResourceAsStream("/mx/edu/uacm/is/slt/ds/forki/img/Aceptar.png"));
             ImageView vistaAceptar = new ImageView(imgAceptar);
             vistaAceptar.setFitWidth(50);
@@ -86,10 +94,14 @@ public void setTablaOperaciones(TableView<Operacion> tablaOperaciones) {
             vistaEdita.setFitWidth(50);
             vistaEdita.setFitHeight(50);
             EditarTarea.setGraphic(vistaEdita);
+            
+            NomTareas.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+            Estado.setCellValueFactory(new PropertyValueFactory<>("estado"));
 
         } catch (Exception e) {
             System.out.println("Error al cargar la imagen: " + e.getMessage());
         }
+        
     }    
 
   
@@ -103,7 +115,9 @@ public void setTablaOperaciones(TableView<Operacion> tablaOperaciones) {
     if (operacion != null) {
         NombreOperacion.setText(operacion.getNombre());
         Precondicion.setText(operacion.getPrecondiciones());      
-        Postcondicion.setText(operacion.getPostcondiciones());    
+        Postcondicion.setText(operacion.getPostcondiciones());
+        
+        TabTareas.setItems(operacion.getTareas());
     }
 }
 

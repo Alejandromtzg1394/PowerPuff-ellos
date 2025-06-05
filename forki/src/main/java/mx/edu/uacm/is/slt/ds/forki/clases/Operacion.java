@@ -5,6 +5,8 @@
 package mx.edu.uacm.is.slt.ds.forki.clases;
 
 import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
@@ -16,7 +18,7 @@ public class Operacion implements Gestion {
     private Integer id_tarea;
     private String nombre;
     private String estado;
-    private List<Integer> tareas;
+    private ObservableList<Tarea> tareas = FXCollections.observableArrayList();
     private String precondiciones;
     private String postcondiciones;
 
@@ -54,11 +56,11 @@ public class Operacion implements Gestion {
         this.estado = estado;
     }
 
-    public List<Integer> getTareas() {
+    public ObservableList<Tarea> getTareas() {
         return tareas;
     }
 
-    public void setTareas(List<Integer> tareas) {
+    public void setTareas(ObservableList<Tarea> tareas) {
         this.tareas = tareas;
     }
 
