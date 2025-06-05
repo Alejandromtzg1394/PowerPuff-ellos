@@ -26,7 +26,6 @@
             <Text layoutX="145.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postcondiciones" />
             <Button fx:id="Aceptar" layoutX="375.0" layoutY="190.0" mnemonicParsing="false" onAction="#Aceptar" text="Aceptar" />
             <Button fx:id="Cancelar" layoutX="375.0" layoutY="258.0" mnemonicParsing="false" onAction="#Cancelar" text="Cancelar" />
-            <Button fx:id="AgregarTarea" layoutX="375.0" layoutY="335.0" mnemonicParsing="false" onAction="#mostrarVentanaCrearTarea" text="Agregar Tareas" />
          </children>
       </Pane>
    </children>
