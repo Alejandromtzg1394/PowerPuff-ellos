@@ -57,6 +57,7 @@ public void initialize(URL url, ResourceBundle rb) {
         
         ObservableList<String> estados = FXCollections.observableArrayList(
                 "Detenida","Ejecución","Pausa"
+                
         );
         comboEstado.setItems(estados);
        
@@ -134,6 +135,7 @@ public void initialize(URL url, ResourceBundle rb) {
     @FXML
     private void Eliminar(ActionEvent event) {
         tablaTareas.getItems().remove(tarea);
+        cerrarVentana();
     }
     
     private void cerrarVentana(){

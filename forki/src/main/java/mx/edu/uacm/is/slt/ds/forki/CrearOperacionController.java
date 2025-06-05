@@ -3,6 +3,10 @@ package mx.edu.uacm.is.slt.ds.forki;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.beans.Observable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -29,8 +33,6 @@ public class CrearOperacionController implements Initializable  {
     private Button Aceptar;
     @FXML
     private Button Cancelar;
-    @FXML
-    private Button AgregarTarea;
 
     private InicioController inicioController;
 
@@ -54,12 +56,6 @@ public void initialize(URL url, ResourceBundle rb) {
         vistaCancelar.setFitHeight(50);
         Cancelar.setGraphic(vistaCancelar);
 
-        Image imgAgregarTarea = new Image(InicioController.class.getResourceAsStream("/mx/edu/uacm/is/slt/ds/forki/img/Mas.png"));
-        ImageView vistaAgregarTarea = new ImageView(imgAgregarTarea);
-        vistaAgregarTarea.setFitWidth(50);
-        vistaAgregarTarea.setFitHeight(50);
-        AgregarTarea.setGraphic(vistaAgregarTarea);
-
 
     } catch (Exception e) {
         System.out.println("Error al cargar la imagen: " + e.getMessage());
@@ -77,12 +73,16 @@ private void Aceptar() {
 
        try {
            // El bucle for ahora llamará a AgregarTarea() y añadirá la tarea devuelta.
+           ObservableList<Tarea> tareas = FXCollections.observableArrayList();
            for (int i = 0; i < 2; i++) {
                Tarea tareaCreada = mostrarVentanaCrearTarea(); // Llama al nuevo método
                if (tareaCreada != null) {
-                   nuevaOperacion.getTareas().add(tareaCreada); // Agrega la tarea a la lista de tareas de la operación
+                   tareas.add(tareaCreada); // Agrega la tarea a la lista de tareas de la operación
+                   System.out.printf("Se creo la tarea: %s\n", tareaCreada);
                }
            }
+           nuevaOperacion.setTareas(tareas);
+           System.out.printf("Tarea Creada: %s\n", nuevaOperacion.getTareas());
        } catch (IOException e) {
            throw new RuntimeException("Error al crear tareas: " + e.getMessage(), e);
        }
@@ -117,7 +117,7 @@ private void Aceptar() {
         nuevaVentana.setScene(new Scene(root));
         nuevaVentana.setTitle("Crear Nueva Tarea");
 
-        Stage ventanaActual = (Stage) AgregarTarea.getScene().getWindow();
+        Stage ventanaActual = (Stage) Aceptar.getScene().getWindow();
         nuevaVentana.initOwner(ventanaActual);
         nuevaVentana.initModality(Modality.WINDOW_MODAL);
 
