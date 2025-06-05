@@ -3,6 +3,8 @@ package mx.edu.uacm.is.slt.ds.forki;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -28,18 +30,26 @@ public class CrearTareaController implements Initializable  {
     private Button Aceptar;
     @FXML
     private Button Cancelar;
-   
+
+    private Tarea tareaCreada;
 
     private InicioController inicioController;
     
     public void setInicioController(InicioController inicioController) {
         this.inicioController = inicioController;
     }
-    
+
+    public Tarea getTareaCreada() {
+        return tareaCreada;
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     try {
+        ObservableList<String> estados = FXCollections.observableArrayList(
+                "Detenida","Ejecución","Pausa"
+        );
+        Estado.setItems(estados);
        
         Image imgAceptar = new Image(InicioController.class.getResourceAsStream("/mx/edu/uacm/is/slt/ds/forki/img/Aceptar.png"));
         ImageView vistaAceptar = new ImageView(imgAceptar);
@@ -64,18 +74,13 @@ public class CrearTareaController implements Initializable  {
     @FXML
     private void Aceptar(ActionEvent event) {
     Tarea nuevaTarea = new Tarea();
-    nuevaTarea.setEstado("Detenido");
+    nuevaTarea.setEstado(Estado.getValue());
     nuevaTarea.setNombre(NombreTarea.getText());
     nuevaTarea.setInstrucciones(Instrucciones.getText());
     nuevaTarea.setPrecondiciones(Precondicion.getText());
     nuevaTarea.setPostcondiciones(Postcondicion.getText());
     nuevaTarea.setId_tarea((int)(Math.random() * 1000));
-    
-    if (inicioController != null) {
-        javafx.application.Platform.runLater(() -> {
-            inicioController.agregarTarea(nuevaTarea);
-        });
-    }
+    tareaCreada=nuevaTarea;
 
     cerrarVentana();
 }

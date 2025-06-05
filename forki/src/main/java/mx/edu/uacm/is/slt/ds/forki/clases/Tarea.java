@@ -25,6 +25,9 @@ public class Tarea {
     
     
 //constructor
+    public Tarea(){
+        
+    }
     public Tarea(int id_tarea, String estado, String nombre, boolean asincrona, int orden_sucesion, String instrucciones, String precondiciones, String postcondiciones) {
         this.id_tarea = id_tarea;
         this.estado = estado;
@@ -35,7 +38,9 @@ public class Tarea {
         this.precondiciones = precondiciones;
         this.postcondiciones = postcondiciones;
     }
-  //geters y seters
+
+    
+    //geters y seters
 
     public int getId_tarea() {
         return id_tarea;
