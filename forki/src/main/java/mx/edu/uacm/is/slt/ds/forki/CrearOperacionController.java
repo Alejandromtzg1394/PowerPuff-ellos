@@ -105,7 +105,7 @@ private void Aceptar() {
 
     // Método modificado para devolver una Tarea
     @FXML // Mantén esta anotación si deseas que el botón "AgregarTarea" también pueda invocarlo directamente
-    private Tarea mostrarVentanaCrearTarea() throws IOException {
+    public Tarea mostrarVentanaCrearTarea() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CrearTareas.fxml"));
         Parent root = loader.load();
 
