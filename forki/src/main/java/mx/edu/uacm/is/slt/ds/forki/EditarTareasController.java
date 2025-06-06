@@ -44,8 +44,6 @@ public class EditarTareasController implements Initializable {
     private TextField Postcondicion;
     @FXML
     private TextArea Instrucciones;
-    @FXML
-    private ComboBox<String> comboEstado;
     
     private Tarea tarea;
     
@@ -55,11 +53,6 @@ public class EditarTareasController implements Initializable {
 public void initialize(URL url, ResourceBundle rb) {
     try {
         
-        ObservableList<String> estados = FXCollections.observableArrayList(
-                "Detenida","Ejecución","Pausa"
-                
-        );
-        comboEstado.setItems(estados);
        
         Image imgAceptar = new Image(InicioController.class.getResourceAsStream("/mx/edu/uacm/is/slt/ds/forki/img/Aceptar.png"));
         ImageView vistaAceptar = new ImageView(imgAceptar);
@@ -96,11 +89,7 @@ public void initialize(URL url, ResourceBundle rb) {
             Postcondicion.setText(tarea.getPostcondiciones());
             Instrucciones.setText(tarea.getInstrucciones());
             
-            if (tarea.getEstado() != null && !tarea.getEstado().isEmpty()) {
-                comboEstado.setValue(tarea.getEstado());
-            } else {
-                comboEstado.getSelectionModel().selectFirst(); // O selecciona un valor por defecto si el estado es nulo/vacío
-            }
+           
         }
     }
     
@@ -115,7 +104,6 @@ public void initialize(URL url, ResourceBundle rb) {
             tarea.setPrecondiciones(Precondicion.getText());
             tarea.setPostcondiciones(Postcondicion.getText());
             tarea.setInstrucciones(Instrucciones.getText());
-            tarea.setEstado(comboEstado.getValue());
             
             if(tablaTareas != null){
                 tablaTareas.refresh();
