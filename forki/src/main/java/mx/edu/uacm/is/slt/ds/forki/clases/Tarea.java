@@ -204,6 +204,25 @@ public class Tarea extends Task<Void>{
         }
         return null;
     }
+
+    /**
+     * Método que devuelve el estado como un String
+     * @return String que indica el estado de la tarea
+     */
+    public String getEstado() {
+        switch (this.estadoActual) {
+            case EN_EJECUCION:
+                return "Ejecucion";
+            case PAUSADA:
+                return "Pausada";
+            case DETENIDA:
+                return "Detenida";
+            case COMPLETADA:
+                return "Completada";
+            default:
+                return "Estado desconocido";
+        }
+    }
     
 
 }
