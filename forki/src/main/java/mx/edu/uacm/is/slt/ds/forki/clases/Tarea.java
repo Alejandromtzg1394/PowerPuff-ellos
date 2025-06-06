@@ -11,7 +11,6 @@ import javafx.concurrent.Task;
  */
 public class Tarea extends Task<Void>{
     private int id_tarea;
-    private String estado;
     private String nombre;
     private boolean asincrona;
     private int orden_sucesion;
@@ -32,7 +31,8 @@ public class Tarea extends Task<Void>{
     
 //constructor
     public Tarea(){
-        
+        this.estadoActual = EstadoTarea.DETENIDA;
+        this.progresoActual = 0;
     }
     public Tarea(int id_tarea, String nombre, boolean asincrona, int orden_sucesion, String instrucciones, String precondiciones, String postcondiciones) {
         this.id_tarea = id_tarea;
@@ -103,9 +103,22 @@ public class Tarea extends Task<Void>{
     public void setPostcondiciones(String postcondiciones) {
         this.postcondiciones = postcondiciones;
     }
-    
-    public EstadoTarea getEstadoActual(){
-        return estadoActual;
+
+    /**
+     * Obtiene el estado actual de una tarea y lo retorna como un String
+     * @return Estado actual
+     */
+    public String getEstadoActual() {
+        if (this.estadoActual == null) {
+            return "No definido";
+        }
+        switch (this.estadoActual){
+            case EN_EJECUCION: return "En ejecución";
+            case PAUSADA: return "Pausada";
+            case DETENIDA: return "Detenida";
+            case COMPLETADA: return "Completada";
+            default: return "Estado incorrecto";
+        }
     }
     
     //metodos
@@ -204,25 +217,4 @@ public class Tarea extends Task<Void>{
         }
         return null;
     }
-
-    /**
-     * Método que devuelve el estado como un String
-     * @return String que indica el estado de la tarea
-     */
-    public String getEstado() {
-        switch (this.estadoActual) {
-            case EN_EJECUCION:
-                return "Ejecucion";
-            case PAUSADA:
-                return "Pausada";
-            case DETENIDA:
-                return "Detenida";
-            case COMPLETADA:
-                return "Completada";
-            default:
-                return "Estado desconocido";
-        }
-    }
-    
-
 }
