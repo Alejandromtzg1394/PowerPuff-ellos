@@ -75,13 +75,11 @@ private void Aceptar() {
        try {
            // El bucle for ahora llamará a AgregarTarea() y añadirá la tarea devuelta.
            ObservableList<Tarea> tareas = FXCollections.observableArrayList();
-           for (int i = 0; i < 2; i++) {
-               Tarea tareaCreada = mostrarVentanaCrearTarea(); // Llama al nuevo método
-               if (tareaCreada != null) {
-                   tareas.add(tareaCreada); // Agrega la tarea a la lista de tareas de la operación
-                   System.out.printf("Se creo la tarea: %s\n", tareaCreada);
-               }
-           }
+                Tarea tareaCreada = mostrarVentanaCrearTarea(); // Llama al nuevo método
+                if (tareaCreada != null) {
+                    tareas.add(tareaCreada); // Agrega la tarea a la lista de tareas de la operación
+                    System.out.printf("Se creo la tarea: %s\n", tareaCreada);
+                }
            nuevaOperacion.setTareas(tareas);
            System.out.printf("Tarea Creada: %s\n", nuevaOperacion.getTareas());
        } catch (IOException e) {
@@ -106,7 +104,7 @@ private void Aceptar() {
 
     // Método modificado para devolver una Tarea
     @FXML // Mantén esta anotación si deseas que el botón "AgregarTarea" también pueda invocarlo directamente
-    private Tarea mostrarVentanaCrearTarea() throws IOException {
+    public Tarea mostrarVentanaCrearTarea() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("CrearTareas.fxml"));
         Parent root = loader.load();
 

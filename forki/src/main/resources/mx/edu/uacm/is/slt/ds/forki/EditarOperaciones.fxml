@@ -12,31 +12,32 @@
 
 <AnchorPane id="AnchorPane" prefHeight="385.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mx.edu.uacm.is.slt.ds.forki.EditarOperacionesController">
    <children>
-      <Pane prefHeight="441.0" prefWidth="904.0" style="-fx-background-color: #FFFFFF;">
+      <Pane prefHeight="441.0" prefWidth="1000.0" style="-fx-background-color: #FFFFFF;">
          <children>
-            <MenuBar fx:id="MenuHome" layoutX="-1.0" layoutY="1.0" prefHeight="26.0" prefWidth="906.0" />
-            <TableView fx:id="TabTareas" layoutX="373.0" layoutY="48.0" prefHeight="281.0" prefWidth="518.0">
+            <MenuBar fx:id="MenuHome" layoutX="-1.0" layoutY="1.0" prefHeight="26.0" prefWidth="1000.0" />
+            <TableView fx:id="TabTareas" layoutX="335.0" layoutY="35.0" prefHeight="281.0" prefWidth="577.0">
                <columns>
-                  <TableColumn fx:id="NomTareas" prefWidth="254.39999389648438" text="Tareas" />
-                  <TableColumn fx:id="Estado" prefWidth="332.00006103515625" text="Estado" />
+                  <TableColumn fx:id="NomTareas" prefWidth="261.5999755859375" text="Tareas" />
+                  <TableColumn fx:id="estadoActual" prefWidth="312.800048828125" text="Estado" />
                </columns>
             </TableView>
-            <Text layoutX="80.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Editar Operacion">
+            <Text layoutX="30.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Editar Operacion">
                <font>
                   <Font size="36.0" />
                </font>
             </Text>
-            <Button fx:id="Aceptar" layoutX="257.0" layoutY="366.0" mnemonicParsing="false" onAction="#Aceptar" text="Aceptar" />
-            <Button fx:id="Cancelar" layoutX="423.0" layoutY="366.0" mnemonicParsing="false" onAction="#Cancelar" text="Cancelar" />
-            <Button fx:id="Ordenar" layoutX="82.0" layoutY="366.0" mnemonicParsing="false" onAction="#Ordenar" text="Ordenar" />
-            <Button fx:id="Eliminar" layoutX="600.0" layoutY="366.0" mnemonicParsing="false" onAction="#Eliminar" text="Eliminar" />
-            <TextField fx:id="NombreOperacion" layoutX="138.0" layoutY="151.0" />
-            <Text layoutX="161.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Operacion" />
-            <TextField fx:id="Precondicion" layoutX="138.0" layoutY="213.0" />
-            <Text layoutX="172.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precondiciones" />
-            <TextField fx:id="Postcondicion" layoutX="138.0" layoutY="277.0" />
-            <Text layoutX="169.0" layoutY="261.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postcondiciones" />
-            <Button fx:id="EditarTarea" layoutX="772.0" layoutY="366.0" mnemonicParsing="false" onAction="#EditarTarea" text="Tarea" />
+            <Button fx:id="Aceptar" layoutX="58.0" layoutY="355.0" mnemonicParsing="false" onAction="#Aceptar" text="Aceptar" />
+            <Button fx:id="Cancelar" layoutX="200.0" layoutY="355.0" mnemonicParsing="false" onAction="#Cancelar" text="Cancelar" />
+            <Button fx:id="Ordenar" layoutX="554.0" layoutY="357.0" mnemonicParsing="false" onAction="#Ordenar" text="Ordenar" />
+            <Button fx:id="Eliminar" layoutX="335.0" layoutY="356.0" mnemonicParsing="false" onAction="#Eliminar" text="Eliminar" />
+            <TextField fx:id="NombreOperacion" layoutX="108.0" layoutY="141.0" />
+            <Text layoutX="131.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre Operacion" />
+            <TextField fx:id="Precondicion" layoutX="108.0" layoutY="203.0" />
+            <Text layoutX="142.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precondiciones" />
+            <TextField fx:id="Postcondicion" layoutX="108.0" layoutY="267.0" />
+            <Text layoutX="139.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Postcondiciones" />
+            <Button fx:id="EditarTarea" layoutX="889.0" layoutY="356.0" mnemonicParsing="false" onAction="#EditarTarea" text="Tarea" />
+            <Button fx:id="AgregarTarea" layoutX="718.0" layoutY="357.0" mnemonicParsing="false" onAction="#AgregarTarea" text="Tarea" />
          </children>
       </Pane>
    </children>
