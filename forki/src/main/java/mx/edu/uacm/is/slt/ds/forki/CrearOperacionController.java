@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -113,7 +114,19 @@ private void Aceptar() {
 
         Stage nuevaVentana = new Stage();
         nuevaVentana.setScene(new Scene(root));
-        nuevaVentana.setTitle("Crear Nueva Tarea");
+        
+        // Mensaje
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Agregar Tarea");
+        alert.setHeaderText(null);
+        alert.setContentText("Puedes agregar tareas o simplemente dar clic en Cancelar para no asignar ninguna.");
+        alert.showAndWait();
+
+        
+        Integer i = 1;
+        nuevaVentana.setTitle("Crear Nueva Tarea"+ i);
+        
+
 
         Stage ventanaActual = (Stage) Aceptar.getScene().getWindow();
         nuevaVentana.initOwner(ventanaActual);
