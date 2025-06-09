@@ -23,8 +23,6 @@ public class CrearTareaController implements Initializable  {
     @FXML
     private TextField Postcondicion;
     @FXML
-    private ComboBox<String> Estado;
-    @FXML
     private TextArea Instrucciones;
     @FXML
     private Button Aceptar;
@@ -46,10 +44,7 @@ public class CrearTareaController implements Initializable  {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     try {
-        ObservableList<String> estados = FXCollections.observableArrayList(
-                "Detenida","Ejecución","Pausa"
-        );
-        Estado.setItems(estados);
+
        
         Image imgAceptar = new Image(InicioController.class.getResourceAsStream("/mx/edu/uacm/is/slt/ds/forki/img/Aceptar.png"));
         ImageView vistaAceptar = new ImageView(imgAceptar);
@@ -74,7 +69,6 @@ public class CrearTareaController implements Initializable  {
     @FXML
     private void Aceptar(ActionEvent event) {
     Tarea nuevaTarea = new Tarea();
-    nuevaTarea.setEstado(Estado.getValue());
     nuevaTarea.setNombre(NombreTarea.getText());
     nuevaTarea.setInstrucciones(Instrucciones.getText());
     nuevaTarea.setPrecondiciones(Precondicion.getText());

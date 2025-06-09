@@ -48,8 +48,8 @@ public class EditarOperacionesController implements Initializable {
     @FXML
     private TableColumn<Tarea, String> NomTareas;
     @FXML
-    private TableColumn<Tarea, String> Estado;
-
+    private TableColumn<Tarea, String> estadoActual;
+    
     private Operacion operacion;
     
     private TableView<Operacion> tablaOperaciones;
@@ -102,8 +102,8 @@ public void setTablaOperaciones(TableView<Operacion> tablaOperaciones) {
             AgregarTarea.setGraphic(vistaAgrega);
             
             NomTareas.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-            Estado.setCellValueFactory(new PropertyValueFactory<>("estado"));
-
+            estadoActual.setCellValueFactory(new PropertyValueFactory<>("estadoActual"));
+            
         } catch (Exception e) {
             System.out.println("Error al cargar la imagen: " + e.getMessage());
         }
