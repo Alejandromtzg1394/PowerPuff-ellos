@@ -204,5 +204,5 @@ Invítame un café
 El código de esta página es libre de usar. Si te fue útil o gusto, puedes apoyar mi trabajo invitándome un café 
 
 ## Buy Me A Coffee
-PayPal.me/Alejandromtzg1394
+(https://PayPal.me/Alejandromtzg1394)
 
