@@ -203,6 +203,6 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más det
 Invítame un café
 El código de esta página es libre de usar. Si te fue útil o gusto, puedes apoyar mi trabajo invitándome un café 
 
-##Buy Me A Coffee
+## Buy Me A Coffee
 PayPal.me/Alejandromtzg1394
 
